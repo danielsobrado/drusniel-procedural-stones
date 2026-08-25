@@ -1,0 +1,292 @@
+{
+  "app": {
+    "name": "Procedural Stone Lab",
+    "autosaveKey": "procedural-stone-lab.project.v1",
+    "autosaveDelayMs": 250,
+    "historyLimit": 80
+  },
+  "stone": {
+    "seed": {
+      "min": 0,
+      "max": 999999,
+      "step": 1,
+      "default": 5
+    },
+    "scale": {
+      "min": 0.2,
+      "max": 4,
+      "step": 0.05,
+      "default": 1
+    },
+    "valueScale": {
+      "min": 0.7,
+      "max": 1.3,
+      "step": 0.01,
+      "default": 1
+    }
+  },
+  "stages": {
+    "shape": {
+      "heightScale": {
+        "min": 0.3,
+        "max": 2.2,
+        "step": 0.01,
+        "default": 1
+      },
+      "depthScale": {
+        "min": 0.3,
+        "max": 2.2,
+        "step": 0.01,
+        "default": 1
+      },
+      "taperScale": {
+        "min": 0,
+        "max": 2.5,
+        "step": 0.01,
+        "default": 1
+      },
+      "topScale": {
+        "min": 0.3,
+        "max": 1.6,
+        "step": 0.01,
+        "default": 1
+      },
+      "topTiltScale": {
+        "min": 0,
+        "max": 2.5,
+        "step": 0.01,
+        "default": 1
+      },
+      "leanScale": {
+        "min": 0,
+        "max": 2.5,
+        "step": 0.01,
+        "default": 1
+      },
+      "embedScale": {
+        "min": 0,
+        "max": 2,
+        "step": 0.01,
+        "default": 1
+      }
+    },
+    "cuts": {
+      "extraCuts": {
+        "min": -4,
+        "max": 4,
+        "step": 1,
+        "default": 0
+      },
+      "depthScale": {
+        "min": 0.2,
+        "max": 2.5,
+        "step": 0.01,
+        "default": 1
+      }
+    },
+    "chips": {
+      "extraChips": {
+        "min": -3,
+        "max": 4,
+        "step": 1,
+        "default": 0
+      },
+      "depthScale": {
+        "min": 0.2,
+        "max": 3,
+        "step": 0.01,
+        "default": 1
+      }
+    },
+    "indentation": {
+      "chance": {
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.14
+      },
+      "depthScale": {
+        "min": 0.2,
+        "max": 3,
+        "step": 0.01,
+        "default": 1
+      }
+    },
+    "fracture-relief": {
+      "strength": {
+        "min": 0,
+        "max": 2.5,
+        "step": 0.01,
+        "default": 1
+      }
+    },
+    "weathering": {
+      "strength": {
+        "min": 0,
+        "max": 2,
+        "step": 0.01,
+        "default": 1
+      },
+      "edgeWearScale": {
+        "min": 0,
+        "max": 2.5,
+        "step": 0.01,
+        "default": 1
+      },
+      "bias": {
+        "min": -0.5,
+        "max": 0.5,
+        "step": 0.01,
+        "default": 0
+      }
+    },
+    "moss-lichen": {
+      "moss": {
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.45
+      },
+      "mossCoverage": {
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.3
+      },
+      "lichen": {
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0
+      }
+    },
+    "wetness": {
+      "waterline": {
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.25
+      },
+      "strength": {
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 1
+      }
+    },
+    "grain": {
+      "strength": {
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0
+      },
+      "normalStrength": {
+        "min": 0,
+        "max": 0.4,
+        "step": 0.005,
+        "default": 0.05
+      },
+      "size": {
+        "min": 0.2,
+        "max": 6,
+        "step": 0.05,
+        "default": 1.6
+      },
+      "growthDetail": {
+        "min": 0,
+        "max": 1.5,
+        "step": 0.01,
+        "default": 0.56
+      }
+    }
+  },
+  "cluster": {
+    "seed": {
+      "min": 0,
+      "max": 999999,
+      "step": 1,
+      "default": 11
+    },
+    "budget": {
+      "min": 4,
+      "max": 14,
+      "step": 1,
+      "default": 8
+    },
+    "radius": {
+      "min": 6,
+      "max": 30,
+      "step": 0.5,
+      "default": 14
+    },
+    "aspect": {
+      "min": 0.4,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.75
+    },
+    "formationChance": {
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.35
+    }
+  },
+  "field": {
+    "seed": {
+      "min": 0,
+      "max": 999999,
+      "step": 1,
+      "default": 42017
+    },
+    "density": {
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.3
+    },
+    "clusterChance": {
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.82
+    },
+    "clusterSpacing": {
+      "min": 24,
+      "max": 140,
+      "step": 1,
+      "default": 56
+    },
+    "singletonChance": {
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.17
+    },
+    "formationChance": {
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.12
+    },
+    "radiusChunks": {
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    },
+    "detailRadiusChunks": {
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    "rollingHeight": {
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "default": 2.4
+    }
+  }
+}

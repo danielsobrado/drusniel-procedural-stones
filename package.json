@@ -1,0 +1,60 @@
+{
+  "name": "@drusniel/procedural-stone",
+  "version": "0.1.0-beta.1",
+  "description": "Deterministic procedural stone generation with a renderer-neutral core and Three.js adapter.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./package-dist/index.js",
+  "module": "./package-dist/index.js",
+  "types": "./package-dist/types/library/index.d.ts",
+  "files": [
+    "package-dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./package-dist/types/library/index.d.ts",
+      "import": "./package-dist/index.js"
+    },
+    "./three": {
+      "types": "./package-dist/types/library/three/index.d.ts",
+      "import": "./package-dist/three.js"
+    },
+    "./presets": {
+      "types": "./package-dist/types/library/presets.d.ts",
+      "import": "./package-dist/presets.js"
+    }
+  },
+  "scripts": {
+    "generate:config": "node scripts/generate-lab-config.mjs",
+    "check:config": "node scripts/generate-lab-config.mjs --check",
+    "dev": "npm run generate:config && vite",
+    "build": "npm run build:app",
+    "build:app": "npm run generate:config && tsc --noEmit && vite build",
+    "build:lib": "npm run generate:config && vite build --config vite.lib.config.ts && tsc -p tsconfig.lib.json && node scripts/prune-package-declarations.mjs",
+    "preview": "vite preview",
+    "test": "npm run generate:config && vitest run",
+    "test:unit": "npm test",
+    "verify": "npm run check:config && npm run test && npm run build:app && npm run build:lib",
+    "pack:check": "npm run verify && node scripts/verify-packed-package.mjs",
+    "release:npm": "npm run pack:check && npm publish --tag next --access public"
+  },
+  "peerDependencies": {
+    "three": ">=0.185.0 <1"
+  },
+  "peerDependenciesMeta": {
+    "three": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/three": "0.185.4",
+    "three": "0.185.1",
+    "typescript": "7.0.2",
+    "vite": "8.2.1",
+    "vitest": "4.1.11",
+    "yaml": "2.9.0"
+  }
+}

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+package-dist/
+*.tgz
+*.local
+.DS_Store
+
+*.log
+.history/

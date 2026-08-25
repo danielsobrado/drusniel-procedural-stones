@@ -1,0 +1,77 @@
+.panel-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+
+.panel-heading strong {
+  font-size: 13px;
+  font-weight: 680;
+}
+
+.section-note {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.mode-switch {
+  display: inline-flex;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(7, 10, 15, 0.62);
+}
+
+.mode-button {
+  min-height: 28px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.mode-button.is-active {
+  background: linear-gradient(145deg, rgba(164, 177, 255, 0.18), rgba(102, 120, 210, 0.1));
+  color: #edf0ff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.toolbar-view .status-pill {
+  min-width: 0;
+  max-width: 170px;
+  min-height: 28px;
+  padding: 0 12px 0 26px;
+  font-size: 9px;
+}
+
+.stage-card {
+  grid-template-rows: minmax(0, 1fr);
+  min-height: 72px;
+}
+
+.stage-glyph {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(141, 157, 255, 0.22);
+  background: linear-gradient(145deg, rgba(141, 157, 255, 0.16), rgba(20, 24, 32, 0.4));
+  color: #d7ddff;
+  font-size: 14px;
+}
+
+.library-panel .preset-swatch.stage-glyph {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  flex: 0 0 auto;
+}
+
+.inspector-panel,
+.library-panel {
+  overflow: auto;
+  padding: 14px 14px 18px;
+}
