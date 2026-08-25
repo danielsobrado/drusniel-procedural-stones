@@ -39,6 +39,8 @@
     "test:unit": "npm test",
     "verify": "npm run check:config && npm run test && npm run build:app && npm run build:lib",
     "pack:check": "npm run verify && node scripts/verify-packed-package.mjs",
+    "predeploy": "npm run build:app",
+    "deploy": "gh-pages -d dist -b gh-pages",
     "release:npm": "npm run pack:check && npm publish --tag next --access public"
   },
   "peerDependencies": {
@@ -51,6 +53,7 @@
   },
   "devDependencies": {
     "@types/three": "0.185.4",
+    "gh-pages": "^6.3.0",
     "three": "0.185.1",
     "typescript": "7.0.2",
     "vite": "8.2.1",

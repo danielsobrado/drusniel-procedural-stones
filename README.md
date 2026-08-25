@@ -11,6 +11,14 @@ npm run dev
 
 Then open the printed localhost URL. `npm run build` typechecks and produces `dist/`. `npm test` runs deterministic generation checks.
 
+## Deploy the Lab to GitHub Pages
+
+```bash
+npm run deploy
+```
+
+The deploy command builds the Lab and publishes `dist/` to the `gh-pages` branch. In the repository's GitHub Pages settings, select **Deploy from a branch**, then choose `gh-pages` and `/ (root)`.
+
 ## Install the library
 
 The Lab and the reusable engine live in one repository, but publish as a deliberately small package API:
