@@ -34,6 +34,7 @@
     "build": "npm run build:app",
     "build:app": "npm run generate:config && tsc --noEmit && vite build",
     "build:lib": "npm run generate:config && vite build --config vite.lib.config.ts && tsc -p tsconfig.lib.json && node scripts/prune-package-declarations.mjs",
+    "prepare": "npm run build:lib",
     "preview": "vite preview",
     "test": "npm run generate:config && vitest run",
     "test:unit": "npm test",

@@ -48,3 +48,10 @@ describe('public core API', () => {
     );
   });
 });
+
+describe('generateStone archetype validation', () => {
+  it('names the unknown archetype and the supported ones', () => {
+    expect(() => generateStone({ archetype: 'cobble' as never, seed: 1 }))
+      .toThrow(/Unknown stone archetype "cobble"\. Expected one of: .*boulder/u);
+  });
+});

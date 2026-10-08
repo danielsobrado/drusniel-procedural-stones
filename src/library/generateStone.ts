@@ -10,6 +10,7 @@ import {
 import { resolveQualityStoneRecipe } from '../world/stones/StoneShapeQuality';
 import {
   resolveStoneRecipe,
+  STONE_ARCHETYPE_IDS,
   type StoneArchetypeId
 } from '../world/stones/StoneRecipe';
 import {
@@ -36,8 +37,22 @@ export interface GeneratedStoneAsset extends GeneratedStone {
   readonly surface: StoneSurfaceData;
 }
 
+/**
+ * Reject an archetype this version does not know. JavaScript callers are not held to
+ * `StoneArchetypeId`, and an unknown id used to surface deep inside recipe resolution as
+ * "Cannot read properties of undefined (reading 'heightRatio')".
+ */
+function assertKnownArchetype(archetype: unknown): asserts archetype is StoneArchetypeId {
+  if (!(STONE_ARCHETYPE_IDS as readonly unknown[]).includes(archetype)) {
+    throw new RangeError(
+      `Unknown stone archetype ${JSON.stringify(archetype)}. Expected one of: ${STONE_ARCHETYPE_IDS.join(', ')}.`
+    );
+  }
+}
+
 /** Generate renderer-neutral geometry without Lab surface settings or browser globals. */
 export function generateStone(options: GenerateStoneOptions): GeneratedStone {
+  assertKnownArchetype(options.archetype);
   const seed = Number.isFinite(options.seed) ? Math.trunc(options.seed) : 0;
   const quality = options.quality ?? DEFAULT_STONE_QUALITY;
   const recipe = quality
